@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row justify-content-center mt-4" *ngIf="book">
+    <div class="col-md-4 col-12">
+      <h3 class="text-center">Book Detail</h3>
+      <div class="card mb-3 mt-4">
+        <img [src]="book.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <label class="card-text fw-bold">Book Name</label>
+          <p class="card-text"> {{book.name}}</p>
+          <label class="card-text fw-bold">Book Author</label>
+          <p class="card-text">{{book.author}}</p>
+          <label class="card-text fw-bold">Book Price</label>
+          <p class="card-text">{{book.price}}$</p>
+          <label class="card-text fw-bold">Book Create Date</label>
+          <p class="card-text">{{book.createdAt | date:'dd/MM/yyyy'}}</p>
+          <button type="button" (click)="deleteBook(book)" class="btn btn-danger btn-sm ms-2 float-end">Delete</button>
+          <button type="button" (click)="updateBook()" class="btn btn-success btn-sm float-end">Edit</button>
+        </div>
+      </div>
+      <div>
+        <app-book-delete [book]="deleteBookItem" (deleteFunction)="deleteItemInView()">
+        </app-book-delete>
+      </div>
+    </div>
+  </div>
+</div>

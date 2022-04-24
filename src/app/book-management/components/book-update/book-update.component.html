@@ -1,0 +1,23 @@
+<body style="background-color:white; height:100%;">
+    <div class=" wrapper fadeInDown">
+        <div id="formContent" *ngIf="updateBookModel">
+            <!-- Tabs Titles -->
+            <h2 class="active">Book Update Form </h2>
+            <!-- Login Form -->
+            <form [formGroup]="updateBookForm" class="form-useradd">
+                <input type="text" id="name" class="fadeIn third inputForm" name="name" placeholder="Name"
+                    formControlName="name" [(ngModel)]="updateBookModel.name">
+                <input type="text" id="author" class="fadeIn third inputForm" name="Author" placeholder="Author"
+                    formControlName="author" [(ngModel)]="updateBookModel.author">
+                <input type="text" id="price" class="fadeIn second inputForm" name="price" placeholder="Price"
+                    formControlName="price" [(ngModel)]="updateBookModel.price">
+                <input type="text" id="image" class="fadeIn third inputForm" name="image" placeholder="Image Url"
+                    formControlName="image" [(ngModel)]="updateBookModel.image">
+                <input type="date" id="createdAt" class="fadeIn third inputForm" name="createdAt" placeholder="Date"
+                    formControlName="createdAt" [ngModel]="updateBookModel.createdAt | date:'yyyy-MM-dd'">
+                <input type="submit" class="fadeIn fourth" value="Update" style="margin-top: 20px;"
+                    (click)="editBook()">
+            </form>
+        </div>
+    </div>
+</body>

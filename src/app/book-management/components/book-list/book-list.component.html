@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row justify-content-center mt-4">
+        <h3 class="text-center">Book List</h3>
+        <div class="table-responsive mt-4">
+            <table class="table">
+                <thead>
+                    <tr style="background-color:dimgray; color: white;">
+                        <th scope="col">Name</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Detail</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of bookList">
+                        <td>{{book.name}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.price}}$</td>
+                        <td class="icon-detail">
+                            <a class="link" (click)="bookDetail(book)"><i class="fa fa-info text-primary"></i></a>
+                        </td>
+                        <td class="icon-edit">
+                            <a class="link" (click)="updateBook(book)"><i class="fa fa-edit text-success"></i></a>
+                        </td>
+                        <td class="icon-delete">
+                            <a class="link" (click)="deleteBook(book)"> <i class="fa fa-trash text-danger"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <app-book-delete [book]="deleteBookItem" (deleteFunction)="deleteItemInView(deleteBookItem.id)">
+                </app-book-delete>
+            </div>
+        </div>
+    </div>
+</div>

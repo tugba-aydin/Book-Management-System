@@ -1,0 +1,22 @@
+<body style="background-color:#555; height:100%;">
+    <div class=" wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <h2 class="active">Book Add Form </h2>
+            <!-- Login Form -->
+            <form [formGroup]="addBookForm" class="form-useradd">
+                <input type="text" id="name" class="fadeIn third inputForm" name="name" placeholder="Name"
+                    formControlName="name">
+                <input type="text" id="author" class="fadeIn third inputForm" name="Author" placeholder="Author"
+                    formControlName="author">
+                <input type="text" id="price" class="fadeIn second inputForm" name="price" placeholder="Price"
+                    formControlName="price">
+                <input type="text" id="image" class="fadeIn third inputForm" name="image" placeholder="Image Url"
+                    formControlName="image">
+                <input type="date" id="createdAt" class="fadeIn third inputForm" name="createdAt" placeholder="Date"
+                    formControlName="createdAt">
+                <input type="submit" class="fadeIn fourth" value="Submit" style="margin-top: 20px;" (click)="addBook()">
+            </form>
+        </div>
+    </div>
+</body>
